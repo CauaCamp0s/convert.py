@@ -23,19 +23,15 @@ def converter_para_base64(caminho_origem, caminho_destino):
                 print(f"Convertido: {arquivo.name} -> {arquivo.stem}.txt")
 
 def base64_to_image(base64_string):
-    # Remove o prefixo "data:image" se presente
     if "data:image" in base64_string:
         base64_string = base64_string.split(",")[1]
 
-    # Decodifica a string Base64 em bytes
     image_bytes = base64.b64decode(base64_string)
     return image_bytes
 
 def create_image_from_bytes(image_bytes):
-    # Cria um objeto BytesIO para manipular os bytes da imagem
     image_stream = BytesIO(image_bytes)
 
-    # Abre a imagem usando Pillow (PIL)
     image = Image.open(image_stream)
     return image
 
@@ -52,13 +48,10 @@ def converter_de_base64(caminho_origem, caminho_destino):
                 with open(arquivo, "r") as arquivo_entrada:
                     encoded_string = arquivo_entrada.read()
 
-                    # Converte Base64 para bytes
                     image_bytes = base64_to_image(encoded_string)
 
-                    # Cria a imagem a partir dos bytes
                     img = create_image_from_bytes(image_bytes)
 
-                    # Salva a imagem com a extensão .png
                     caminho_saida = caminho_destino / f"{arquivo.stem}.png"
                     img.save(caminho_saida)
                     print(f"Convertido: {arquivo.name} -> {arquivo.stem}.png")
