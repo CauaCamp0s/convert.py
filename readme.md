@@ -131,7 +131,3 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir **issues** ou en
 ## Licença
 
 Este projeto está licenciado sob a Licença Creative Commons (CC BY-NC 4.0). Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
----
-
-Agora o `README.md` está completo e pronto para ser utilizado! Ele fornece todas as informações necessárias para instalar, executar e entender o funcionamento do programa. 😊
